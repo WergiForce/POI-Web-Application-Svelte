@@ -36,7 +36,7 @@ export let mainBar = [
     },
     {
         title: "Geosite Map",
-        icon: "fas fa-map-marked-alt fa-3x",
+        icon: "fas fa-map fa-3x",
         colour: "rgb(102, 153, 255)",
         link: "/#/Map",
     },
