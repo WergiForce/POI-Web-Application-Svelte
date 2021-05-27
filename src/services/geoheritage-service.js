@@ -83,4 +83,23 @@ export class GeoheritageService {
             return false;
         }
     }
+
+    async updateSettings(firstName, lastName, email, password, id) {
+        try {
+            const userDetails = {
+                firstName: firstName,
+                lastName: lastName,
+                email: email,
+                password: password,
+                _id: id
+            };
+            console.log(userDetails);
+            const response = await axios.put(`${this.baseUrl}/api/users/${id}`, userDetails);
+            const newUser = await response.data;
+            user.set(newUser);
+            return true;
+        } catch (error) {
+            return false;
+        }
+    }
 }
