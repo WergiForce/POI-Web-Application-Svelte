@@ -45,9 +45,9 @@
                     <input bind:value={description} class="uk-input" type="text" name="description" placeholder="Description" />
                 </div>
             </div>
-            <div class="uk-margin uk-text-left">
-                <div class="uk-form-label">Select Theme</div>
-                <div class="uk-form-controls ">
+            <div class="ui fluid selection dropdown">
+                <div class="default text">Select Theme</div>
+                <div class="menu ">
                     {#each themeList as theme, i}
                         <label> <input bind:group={selectedTheme} value={i} class="uk-radio" type="radio" name="theme"/>
                             {theme.themeNo} - {theme.themeTitle}
