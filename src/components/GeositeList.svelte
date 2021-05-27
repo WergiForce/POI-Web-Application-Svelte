@@ -25,10 +25,10 @@
                 <tr>
                     <td>{geosite.siteName}</td>
                     <td>{geosite.lat}</td>
-                    <td>{geosite.long}</td>
+                    <td>{geosite.lng}</td>
                     <td>{geosite.description}</td>
                     <td>{geosite.theme.themeTitle}</td>
-                                        <td>{geosite.geologist.firstName} {geosite.geologist.lastName}</td>
+                    <td>{geosite.geologist.firstName} {geosite.geologist.lastName}</td>
                     <!--
                                                                                <td>
                                                                                    <a href="/gallery/{{_id}}" class="uk-card uk-card-small uk-card-hover" >
