@@ -102,4 +102,14 @@ export class GeoheritageService {
             return false;
         }
     }
+
+    async logout() {
+        user.set({
+            email: "",
+            token: ""
+        });
+        this.geositeList = [];
+        axios.defaults.headers.common["Authorization"] = "";
+        localStorage.geosite = null;
+    }
 }

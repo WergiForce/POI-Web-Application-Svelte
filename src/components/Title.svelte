@@ -14,8 +14,8 @@
             <div class="uk-text-muted uk-text-small">
                 {$subTitle}
             </div>
-            <div class="uk-text-muted uk-text-center" style="font-size:xx-small">
-                {$user.firstName} {$user.lastName}
+            <div class="uk-text-muted uk-text-right uk-text-small">
+                {$user.email}
             </div>
         </div>
     </div>

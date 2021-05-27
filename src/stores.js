@@ -15,7 +15,7 @@ export const welcomeBar = [
     },
 ]
 
-export const mainBar = [
+export let mainBar = [
     {
         title: "Log Geosite",
         icon: "fas fa-map-marked-alt fa-3x",
@@ -54,9 +54,6 @@ export const title = writable("");
 export const subTitle = writable("");
 
 export const user = writable({
-    firstName: "",
-    lastName: "",
     email: "",
-    password: "",
-    _id: ""
+    token: ""
 });
