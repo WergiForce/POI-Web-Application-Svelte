@@ -1,13 +1,16 @@
 <script lang="ts">
     import { onMount, getContext } from "svelte";
     const geoheritageService = getContext("GeoheritageService");
+    import Coordinates from "./Coordinates.svelte";
+
+    export let justLogged;
 
     let themeList = [];
     let siteName = "";
-    let lat = 0;
-    let long = 0;
+    export let lat = 0.0;
+    export let lng = 0.0;
     let description = "";
-    let selectedTheme = 0;
+    let selectedTheme=0;
     let errorMessage = "";
 
     onMount(async () => {
@@ -15,9 +18,9 @@
     });
 
     async function logGeosite() {
-        const success = await geoheritageService.logGeosite(siteName, lat, long, description, themeList[selectedTheme])
+        const success = await geoheritageService.logGeosite(siteName, lat, lng, description, themeList[selectedTheme])
         if (success) {
-
+            if (justLogged) justLogged(siteName, themeList[selectedTheme])
         } else {
             errorMessage = "Log not completed - some error occurred";
         }
@@ -34,16 +37,7 @@
                 </div>
             </div>
             <div class="uk-margin">
-                <label class="uk-form-label" for="form-stacked-text">Latitude</label>
-                <div class="uk-form-controls">
-                    <input bind:value={lat} class="uk-input" type="number" name="lat" placeholder="Latitude" />
-                </div>
-            </div>
-            <div class="uk-margin">
-                <label class="uk-form-label" for="form-stacked-text">Longitude</label>
-                <div class="uk-form-controls">
-                    <input bind:value={long} class="uk-input" type="number" name="long" placeholder="Longitude" />
-                </div>
+                <Coordinates bind:lat={lat} bind:lng={lng}/>
             </div>
             <div class="uk-margin">
                 <label class="uk-form-label" for="form-stacked-text">Description</label>
@@ -51,14 +45,15 @@
                     <input bind:value={description} class="uk-input" type="text" name="description" placeholder="Description" />
                 </div>
             </div>
-            <div class="uk-margin">
-                <label class="uk-form-label" for="form-stacked-text">Select Category</label>
-                <select class="uk-select" name="theme">
-                    <option value="">Please select an IGH Theme</option>
-                    {#each themeList as theme }
-                    <option value="{theme.themeTitle}">{theme.themeNo} - {theme.themeTitle}</option>
+            <div class="uk-margin uk-text-left">
+                <div class="uk-form-label">Select Theme</div>
+                <div class="uk-form-controls ">
+                    {#each themeList as theme, i}
+                        <label> <input bind:group={selectedTheme} value={i} class="uk-radio" type="radio" name="theme"/>
+                            {theme.themeNo} - {theme.themeTitle}
+                        </label> <br>
                     {/each}
-                </select>
+                </div>
             </div>
             <div class="uk-margin uk-text-center">
                 <button class="submit uk-button uk-button-primary uk-button-large uk-width-auto">Submit</button>
