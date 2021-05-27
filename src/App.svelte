@@ -12,7 +12,7 @@
   import Navigator from "./components/Navigator.svelte";
   import Router from "svelte-spa-router";
 
-  setContext("GeoheritageService", new GeoheritageService("http://localhost:4000"));
+  setContext("GeoheritageService", new GeoheritageService("https://shielded-hamlet-17254.herokuapp.com/"));
 
   let routes = {
     "/" : Main,
