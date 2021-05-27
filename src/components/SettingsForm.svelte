@@ -8,7 +8,7 @@
     let password = $user.password
     let message = "";
 
-    const geoheritageService = getContext("DonationService");
+    const geoheritageService = getContext("GeoheritageService");
 
     async function save() {
         let success = await geoheritageService.updateSettings(firstName, lastName, email, password, $user._id)
