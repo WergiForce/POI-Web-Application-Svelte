@@ -5,7 +5,7 @@ export const welcomeBar = [
         title: "Sign Up",
         icon: "fas fa-user-cog fa-3x",
         colour: "color:rgb(63, 160, 155)",
-        link: "/#/login",
+        link: "/#/signup",
     },
     {
         title: "Log In",

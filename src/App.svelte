@@ -3,9 +3,11 @@
   import {GeoheritageService} from "./services/geoheritage-service";
   import Main from "./pages/Main.svelte"
   import Login from "./pages/Login.svelte"
+  import Signup from "./pages/Signup.svelte"
   import Themes from "./pages/Themes.svelte"
   import Geosites from "./pages/Geosites.svelte"
   import logGeosite from "./pages/logGeosite.svelte";
+  import Settings from "./pages/Settings.svelte";
   import Navigator from "./components/Navigator.svelte";
   import Router from "svelte-spa-router";
 
@@ -14,9 +16,11 @@
   let routes = {
     "/" : Main,
     "/login": Login,
+    "/signup": Signup,
     "/themes": Themes,
     "/geosites": Geosites,
     "/logGeosite": logGeosite,
+    "/settings": Settings,
     "/logout": Main
   }
 </script>
