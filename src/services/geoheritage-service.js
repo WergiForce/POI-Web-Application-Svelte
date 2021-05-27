@@ -51,15 +51,16 @@ export class GeoheritageService {
         }
     }
 
-    async logGeosite(siteName, lat, long, description, theme) {
+    async logGeosite(siteName, lat, lng, description, theme) {
         try {
             const logGeosite = {
                 siteName: siteName,
                 lat: lat,
-                long: long,
+                lng: lng,
                 description: description,
                 theme: theme,
             };
+            this.geositeList.push(logGeosite)
             const response = await axios.post(this.baseUrl + "/api/themes/" + theme._id + "/geosites", logGeosite);
             return response.status == 200;
         } catch (err) {
