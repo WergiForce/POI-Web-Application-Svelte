@@ -1,11 +1,15 @@
 <script>
     import {title, subTitle, navBar, welcomeBar} from "../stores";
+    import {getContext} from 'svelte';
+    const geoheritageService = getContext("GeoheritageService");
+
     title.set("Geological Survey Ireland");
     subTitle.set("Sign up or Log in");
 
     navBar.set({
         bar: welcomeBar
     });
+    geoheritageService.logout();
 </script>
 
 <div class="uk-container uk-margin">
