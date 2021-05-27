@@ -3,7 +3,7 @@
     import GeositeForm from "../components/GeositeForm.svelte";
     import {LeafletMap} from '../services/leaflet-map';
     import {onMount} from "svelte";
-    import 'leaflet/dist/leaflet.css';
+//    import 'leaflet/dist/leaflet.css';
 
     let lat = 52.160858;
     let lng = -7.152420;
